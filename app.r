@@ -1,9 +1,23 @@
-getwd()
+#getwd()
 
-install.packages("readr")
+#install.packages("shiny")
+#install.packages("ggplot2")
 
-library(readr)
 
-credit <- read_csv("data/credit_dataset.csv")
+library(shiny)
+library(ggplot2)
 
-View(credit)
+
+
+#CREATE SHINY APP
+
+port <- Sys.getenv('PORT')
+
+shiny::runApp(
+  appDir = getwd(),
+  host = '0.0.0.0',
+  port = as.numeric(port)
+)
+
+#shinyApp(ui = ui, server = server)
+
