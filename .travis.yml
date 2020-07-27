@@ -13,7 +13,7 @@ install:
   - R -e 'if (system.file(package="packrat") == "") install.packages("shinydashboard")'
   - R -e 'if (system.file(package="packrat") == "") install.packages("shiny")'
   - R -e 'if (system.file(package="packrat") == "") install.packages("testthat")'
-  - R -e 'if (system.file(package="packrat") == "") install.packages("shinytest")'
+  #- R -e 'if (system.file(package="packrat") == "") install.packages("shinytest")'
 
 
 #cache:
@@ -38,8 +38,8 @@ install:
 #  - "if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then hash -r; fi"
 #  - "phantomjs --version"
 
-#script:
-#  - R -f run_tests.R
+script:
+  - R -f run_tests.R
 
 deploy:
     provider: heroku
