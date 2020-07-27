@@ -1,45 +1,28 @@
-library(shiny)
+library(shinydashboard)
 
-ui <- fluidPage(
-  titlePanel("DSA Mentoring: Twitter Sentiment Analisys"),
-  
-  
-  sidebarLayout(
-    
-    sidebarPanel(
-      # Copy the line below to make a text input box
-      textInput("text", label = h3("Text input"), value = "Enter text..."),
+dashboardPage(
+  dashboardHeader(title = "Basic dashboard"),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Dashboard", tabName = "dashboard"),
+      menuItem("Raw data", tabName = "rawdata")
+    )
+  ),
+  dashboardBody(
+    # Boxes need to be put in a row (or column)
+    fluidRow(
+      box(plotOutput("plot1", height = 250)),
       
-      hr(),
-      fluidRow(column(3, verbatimTextOutput("value")))
-    ),
-    
-    mainPanel(
-      #fluidRow(
-      #  column(4,
-      #         selectInput("man",
-      #                     "Manufacturer:",
-      #                     c("All",
-      #                       unique(as.character(mpg$manufacturer))))
-      #  ),
-      #  column(4,
-      #         selectInput("trans",
-      #                     "Transmission:",
-      #                     c("All",
-      #                       unique(as.character(mpg$trans))))
-      #  ),
-      #  column(4,
-      #         selectInput("cyl",
-      #                     "Cylinders:",
-      #                     c("All",
-      #                       unique(as.character(mpg$cyl))))
-      # )
-      #),
-      # Create a new row for the table.
-      DT::dataTableOutput("table")
+      box(
+        title = "Controls",
+        sliderInput("slider", "Number of observations:", 1, 100, 50)
+      ),
+      box(
+        width = 4, status = "info",
+        title = "Top packages (last 5 min)",
+        tableOutput("packageTable")
+      )
+      
     )
   )
-  
-  # Create a new Row in the UI for selectInputs
-  
 )

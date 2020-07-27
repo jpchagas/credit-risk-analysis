@@ -6,6 +6,8 @@
 
 > This project aims to apply the knowledge obtained in the R course in the analysis of credit risk.
 
+[See Application](https://jpchagas.shinyapps.io/credit-risk-analysis/)
+
 **Badges will go here**
 
 - build status

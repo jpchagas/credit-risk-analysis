@@ -1,22 +1,18 @@
 library(readr)
-#source("functions.R")
+
+
+
 server <- function(input, output) {
+  set.seed(122)
+  histdata <- rnorm(500)
   
-  # Filter data based on selections
-  output$table <- DT::renderDataTable(DT::datatable({
-    data <- read_csv("data/credit_dataset.csv")
-    #if (input$man != "All") {
-    #  data <- data[data$manufacturer == input$man,]
-    #}
-    #if (input$cyl != "All") {
-    #  data <- data[data$cyl == input$cyl,]
-    #}
-    #if (input$trans != "All") {
-    #  data <- data[data$trans == input$trans,]
-    #}
-    data
-  }))
+  output$plot1 <- renderPlot({
+    data <- histdata[seq_len(input$slider)]
+    hist(data)
+  })
   
-  #output$value <- renderPrint({ input$text })
+  output$packageTable <- renderTable({
+    read.csv('data/credit_dataset.csv')
+  })
   
 }
