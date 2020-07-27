@@ -12,6 +12,8 @@ install:
   - R -e 'if (system.file(package="packrat") == "") install.packages("ggplot2")'
   - R -e 'if (system.file(package="packrat") == "") install.packages("shinydashboard")'
   - R -e 'if (system.file(package="packrat") == "") install.packages("shiny")'
+  - R -e 'if (system.file(package="packrat") == "") install.packages("testthat")'
+  - R -e 'if (system.file(package="packrat") == "") install.packages("shinytest")'
 
 
 #cache:
