@@ -5,14 +5,14 @@ r: 3.6.3
 
 # Install packrat if needed and have it restore packages.
 install:
-  - R -e 'if (system.file(package="packrat") == "") install.packages("readr")'
-  - R -e 'if (system.file(package="packrat") == "") install.packages("randomForest")'
-  - R -e 'if (system.file(package="packrat") == "") install.packages("caret")'
-  - R -e 'if (system.file(package="packrat") == "") install.packages("lattice")'
-  - R -e 'if (system.file(package="packrat") == "") install.packages("ggplot2")'
-  - R -e 'if (system.file(package="packrat") == "") install.packages("shinydashboard")'
-  - R -e 'if (system.file(package="packrat") == "") install.packages("shiny")'
-  - R -e 'if (system.file(package="packrat") == "") install.packages("testthat")'
+  - R -e 'if (system.file(package="readr") == "") install.packages("readr")'
+  - R -e 'if (system.file(package="randomForest") == "") install.packages("randomForest")'
+  - R -e 'if (system.file(package="caret") == "") install.packages("caret")'
+  - R -e 'if (system.file(package="lattice") == "") install.packages("lattice")'
+  - R -e 'if (system.file(package="ggplot2") == "") install.packages("ggplot2")'
+  - R -e 'if (system.file(package="shinydashboard") == "") install.packages("shinydashboard")'
+  - R -e 'if (system.file(package="shiny") == "") install.packages("shiny")'
+  - R -e 'if (system.file(package="testthat") == "") install.packages("testthat")'
   #- R -e 'if (system.file(package="packrat") == "") install.packages("shinytest")'
 
 
