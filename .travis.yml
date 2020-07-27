@@ -45,4 +45,3 @@ deploy:
     provider: heroku
     api_key: $HEROKU_TOKEN
     app: credit-risk-analysis
-    run: "buildpacks:set https://github.com/virtualstaticvoid/heroku-buildpack-r.git"
