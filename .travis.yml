@@ -5,13 +5,19 @@ r: 3.6.3
 
 # Install packrat if needed and have it restore packages.
 install:
-  - R -e 'if (system.file(package="packrat") == "") install.packages("packrat")'
-  - R -e "packrat::packify(); packrat::restore()"
+  - R -e 'if (system.file(package="packrat") == "") install.packages("readr")'
+  - R -e 'if (system.file(package="packrat") == "") install.packages("randomForest")'
+  - R -e 'if (system.file(package="packrat") == "") install.packages("caret")'
+  - R -e 'if (system.file(package="packrat") == "") install.packages("lattice")'
+  - R -e 'if (system.file(package="packrat") == "") install.packages("ggplot2")'
+  - R -e 'if (system.file(package="packrat") == "") install.packages("shinydashboard")'
+  - R -e 'if (system.file(package="packrat") == "") install.packages("shiny")'
 
-cache:
+
+#cache:
   # Main R library
-  packages: true
-  directories:
+#  packages: true
+#  directories:
     # Packrat packages
     - packrat/lib
     # PhantomJS
